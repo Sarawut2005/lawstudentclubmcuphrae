@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบแอดมิน - Student Club Department of Law MCU PHRAE</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+</head>
+<body class="admin-login">
+    <div class="login-container">
+        <div class="login-form">
+            <h2><i class="fas fa-lock"></i> เข้าสู่ระบบผู้ดูแล</h2>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="username">ชื่อผู้ใช้</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn login-btn">เข้าสู่ระบบ</button>
+            </form>
+            <p class="login-note">*สำหรับคณะกรรมการสโมสรนิสิตเท่านั้น</p>
+            <p class="login-note">*For student club committee only</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const CORRECT_USERNAME = 'scdolmcuphrae@gmail.com'; 
+            
+            const CORRECT_PASSWORD_HASH = 'd400b5f488d4260c29b9e7335458dbc4b23d6c5baf7086e1fbb5ed260da3d0b0'; 
+
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+
+            const passwordInputHash = sha256(passwordInput);
+
+            if (usernameInput === CORRECT_USERNAME && passwordInputHash === CORRECT_PASSWORD_HASH) {
+                localStorage.setItem('adminLoggedIn', 'true');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+            }
+        });
+    </script>
+</body>
+</html>

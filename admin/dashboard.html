@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผงควบคุมผู้ดูแล - Student Club Department of Law MCU PHRAE</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-dashboard">
+    <header class="admin-header">
+        <div class="container">
+            <h1>แผงควบคุมผู้ดูแลระบบ สโมสรนิสิต สาขาวิชานิติศาสตร์ มจร วิทยาเขตแพร่</h1>
+            <div class="admin-actions">
+                <span>สวัสดี, ผู้ดูแล</span>
+                <a href="#" id="logoutBtn" class="btn btn-danger">ออกจากระบบ</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <ul>
+                <li><a href="#news" class="active"><i class="fas fa-newspaper"></i> จัดการข่าวสาร</a></li>
+                <li><a href="#activities"><i class="fas fa-running"></i> จัดการกิจกรรม</a></li>
+                <li><a href="#announcements"><i class="fas fa-bullhorn"></i> จัดการประกาศ</a></li>
+                <li><a href="#committee"><i class="fas fa-users"></i> จัดการคณะกรรมการ</a></li>
+                <li><a href="#downloads"><i class="fas fa-download"></i> จัดการดาวน์โหลด</a></li>
+            </ul>
+        </nav>
+
+        <main class="admin-main">
+            <section id="news" class="admin-section active">
+                <div class="section-header"><h2>จัดการข่าวสาร</h2><button class="btn btn-primary" id="addNewsBtn"><i class="fas fa-plus"></i> เพิ่มข่าวสารใหม่</button></div>
+                <div class="admin-table-container"><table class="admin-table"><thead><tr><th>หัวข้อ</th><th>วันที่</th><th>สถานะ</th><th>การดำเนินการ</th></tr></thead><tbody id="newsTableBody"></tbody></table></div>
+            </section>
+            <section id="activities" class="admin-section">
+                <div class="section-header"><h2>จัดการกิจกรรม</h2><button class="btn btn-primary" id="addActivityBtn"><i class="fas fa-plus"></i> เพิ่มกิจกรรมใหม่</button></div>
+                <div class="admin-table-container"><table class="admin-table"><thead><tr><th>ชื่อกิจกรรม</th><th>คำอธิบาย</th><th>การดำเนินการ</th></tr></thead><tbody id="activitiesTableBody"></tbody></table></div>
+            </section>
+            <section id="announcements" class="admin-section">
+                <div class="section-header"><h2>จัดการประกาศ</h2><button class="btn btn-primary" id="addAnnouncementBtn"><i class="fas fa-plus"></i> เพิ่มประกาศใหม่</button></div>
+                 <div class="admin-table-container"><table class="admin-table"><thead><tr><th>หัวข้อประกาศ</th><th>วันที่</th><th>การดำเนินการ</th></tr></thead><tbody id="announcementsTableBody"></tbody></table></div>
+            </section>
+            <section id="committee" class="admin-section">
+                <div class="section-header"><h2>จัดการคณะกรรมการนิสิต</h2><button class="btn btn-primary" id="addCommitteeBtn"><i class="fas fa-plus"></i> เพิ่มกรรมการใหม่</button></div>
+                <div class="admin-table-container"><table class="admin-table"><thead><tr><th>ชื่อ-นามสกุล</th><th>ตำแหน่ง</th><th>การดำเนินการ</th></tr></thead><tbody id="committeeTableBody"></tbody></table></div>
+            </section>
+            <section id="downloads" class="admin-section">
+                 <div class="section-header"><h2>จัดการเอกสารดาวน์โหลด</h2><button class="btn btn-primary" id="addDownloadBtn"><i class="fas fa-plus"></i> เพิ่มลิงก์ใหม่</button></div>
+                <div class="admin-table-container"><table class="admin-table"><thead><tr><th>หัวข้อเรื่อง</th><th>ลิงก์ (URL)</th><th>การดำเนินการ</th></tr></thead><tbody id="downloadsTableBody"></tbody></table></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3 id="modalTitle"></h3><span class="close">&times;</span></div>
+            <div class="modal-body">
+                <form id="dataForm">
+                    <input type="hidden" id="itemId"><input type="hidden" id="itemType"><div id="formFields"></div>
+                    <div class="form-actions"><button type="button" class="btn btn-secondary" id="cancelBtn">ยกเลิก</button><button type="submit" class="btn btn-primary">บันทึก</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/data-manager.js"></script>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>
