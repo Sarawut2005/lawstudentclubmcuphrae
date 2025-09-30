@@ -1,0 +1,12 @@
+{
+  "name": "university-website-server",
+  "version": "1.0.0",
+  "description": "A Node.js server for the university website.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

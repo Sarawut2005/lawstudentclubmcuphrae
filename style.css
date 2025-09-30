@@ -1,0 +1,70 @@
+/* === General Setup === */
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@400;600&display=swap');
+body { font-family: 'Mitr', sans-serif; margin: 0; background-color: #fdf6f8; color: #444; font-size: 16px; line-height: 1.7; }
+h1, h2, h3, h4, h5, h6 { color: #b91c5c; font-weight: 600; }
+a { text-decoration: none; color: #e91e63; transition: color 0.3s ease; }
+a:hover { color: #b91c5c; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.page-section { padding: 60px 0; }
+.section-title { text-align: center; font-size: 2.8em; margin-bottom: 50px; }
+.btn { display: inline-block; background-color: #e91e63; color: white; padding: 12px 25px; border-radius: 50px; font-size: 1.1em; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+.btn:hover { background-color: #b91c5c; }
+/* === Header === */
+.main-header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 10px 0; position: sticky; top: 0; z-index: 1000; }
+.main-header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { height: 100px; }
+.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 25px; }
+.main-nav a { color: #333; font-weight: 600; padding: 10px 0; position: relative; }
+.admin-link { background-color: #fce4ec; color: #b91c5c; padding: 8px 15px; border-radius: 20px; }
+/* === Hero Section === */
+.hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-bg.jpg') no-repeat center center/cover; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+.hero-content h1 { color: white; font-size: 4em; margin: 0; }
+.hero-content p { font-size: 1.5em; margin: 10px 0 30px 0; }
+/* === Card Grid (News & Activities) === */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+.card-content { padding: 20px; }
+.card-date { font-size: 0.9em; color: #777; margin: 0 0 10px 0; }
+.card h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+.card.no-image { display: flex; flex-direction: column; }
+.card.no-image .card-content { flex-grow: 1; }
+/* === Announcements Page === */
+.announcement-list .item { background: #fff; padding: 25px; margin-bottom: 20px; border-left: 5px solid #e91e63; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.announcement-list h3 { margin-top: 0; }
+.announcement-list .date { font-weight: bold; color: #555; display: block; margin-bottom: 10px; }
+/* === Downloads Page === */
+.download-item { background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center; padding: 15px; gap: 15px; margin-bottom: 15px; }
+.download-icon { font-size: 2.5em; color: #e91e63; width: 60px; text-align: center; }
+.download-info { flex-grow: 1; }
+.download-info h3 { margin: 0 0 5px 0; font-size: 1.2em; }
+.download-info p { margin: 0; color: #666; font-size: 0.9em; }
+.download-btn { background-color: #e91e63; color: white; padding: 10px 20px; border-radius: 5px; white-space: nowrap; }
+/* === Contact Page === */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: flex-start; }
+.contact-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); height: 100%; }
+.map-container { margin-top: 30px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.map-container iframe { width: 100%; height: 300px; border: 0; display: block; }
+/* === About Page Layout === */
+.about-content, .structure-content { background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); margin-bottom: 40px; }
+.president-container, .vp-container { display: flex; justify-content: center; margin-bottom: 30px; flex-wrap: wrap; gap: 30px; }
+.section-subtitle { text-align: center; font-size: 1.8em; margin-top: 50px; margin-bottom: 30px; color: #333; border-top: 1px solid #eee; padding-top: 40px; }
+.committee-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.committee-card { background-color: #fff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; overflow: hidden; width: 320px; max-width: 100%; }
+.committee-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2); }
+.committee-card img { width: 100%; height: 400px; object-fit: cover; object-position: top; }
+.committee-card .card-content { padding: 20px 15px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; }
+.committee-card h3 { margin: 0 0 10px 0; font-size: 1.4em; color: #333; }
+.committee-card .position { font-size: 1.05em; color: #e91e63; font-weight: 600; margin: 0; line-height: 1.5; }
+/* === Detail Pages & Embeds === */
+.detail-title { font-size: 2.5em; margin-bottom: 10px; text-align: center; }
+.detail-date { text-align: center; color: #777; font-size: 1.1em; margin-bottom: 30px; }
+.detail-content { background: #fff; padding: 30px; border-radius: 5px; line-height: 1.8; font-size: 1.1em; }
+.back-link { display: inline-block; margin-top: 30px; font-weight: bold; }
+.facebook-embed-container { margin: 30px 0; display: flex; justify-content: center; background: #f0f2f5; padding: 20px 0; border-radius: 8px; overflow-x: auto; }
+.gdrive-embed-container { position: relative; width: 100%; height: 80vh; margin: 30px 0; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+.gdrive-embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+/* === Footer === */
+.main-footer { background: #333; color: #ddd; text-align: center; padding: 30px 0; margin-top: 60px; }
+@media (max-width: 992px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .main-header .container { flex-direction: column; gap: 10px; } .main-nav ul { flex-wrap: wrap; justify-content: center; } }
